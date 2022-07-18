@@ -75,6 +75,16 @@ class CardFormView: UIView, STPCardFormViewDelegate {
         if let backgroundColor = cardStyle["backgroundColor"] as? String {
             cardForm?.backgroundColor = UIColor(hexString: backgroundColor)
         }
+
+        if let borderColor = cardStyle["borderColor"] as? String {
+            cardForm?.layer.borderColor = UIColor(hexString: borderColor).cgColor
+        }
+        if let borderRadius = cardStyle["borderRadius"] as? Int {
+            cardForm?.layer.cornerRadius = CGFloat(borderRadius)
+        }
+        if let cursorColor = cardStyle["cursorColor"] as? String {
+            cardForm?.tintColor = UIColor(hexString: cursorColor)
+        }
         // if let disabledBackgroundColor = cardStyle["disabledBackgroundColor"] as? String {
         //     cardForm?.disabledBackgroundColor = UIColor(hexString: disabledBackgroundColor)
         // }
